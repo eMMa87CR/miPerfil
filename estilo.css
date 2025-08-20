@@ -1,4 +1,8 @@
-/* Estilos generales del cuerpo */
+/* ------------------- Estilos generales ------------------- */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
@@ -9,23 +13,99 @@ body {
   min-height: 100vh;
 }
 
-/* Container principal */
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
+/* ------------------- Container principal ------------------- */
+.container-main {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0;
   background: rgba(255, 255, 255, 0.95);
-  margin-top: 50px;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  animation: fadeIn 1s ease-in;
 }
 
-/* Estilos del header */
-header {
+/* ------------------- Navbar personalizado ------------------- */
+
+.navbar-custom .navbar-collapse {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.navbar-custom .navbar-nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.navbar-custom {
+  background: rgba(102, 126, 234, 0.9) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid rgba(118, 75, 162, 0.3);
+  padding: 15px 0;
+  min-height: 70px;
+}
+
+.navbar-custom .navbar-brand {
+  color: white !important;
+  font-weight: bold;
+  font-size: 1.6rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 10px 0;
+}
+
+.navbar-custom .navbar-nav {
+  gap: 8px;
+}
+
+.navbar-custom .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.95) !important;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin: 0 3px;
+  padding: 10px 18px !important;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
   text-align: center;
-  padding: 20px 0;
-  border-bottom: 2px solid #667eea;
-  margin-bottom: 30px;
+  min-width: fit-content;
+}
+
+.navbar-custom .navbar-nav .nav-link:hover {
+  color: white !important;
+  background: rgba(118, 75, 162, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-custom .navbar-nav .nav-link.active {
+  color: white !important;
+  background: rgba(118, 75, 162, 0.7);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+.navbar-custom .navbar-toggler {
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.navbar-custom .navbar-toggler:focus {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
+}
+
+.navbar-custom .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  width: 1.2em;
+  height: 1.2em;
+}
+
+/* ------------------- Header ------------------- */
+.header-content,
+.header-contact {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
 }
 
 h1 {
@@ -39,46 +119,256 @@ h1 {
   color: #666;
   font-size: 1.2em;
   font-style: italic;
+  margin-bottom: 15px;
 }
 
-/* Estilos de secciones */
+.descripcion {
+  color: #555;
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ------------------- Secciones ------------------- */
 .seccion {
-  margin: 30px 0;
-  padding: 20px;
-  background: #f8f9fa;
-  border-radius: 10px;
-  border-left: 5px solid #667eea;
+  margin: 0;
+  padding: 30px;
+  border-bottom: 1px solid rgba(102, 126, 234, 0.1);
 }
 
-h2 {
+.seccion:nth-child(even) {
+  background: #f8f9fa;
+}
+
+.seccion:last-of-type {
+  border-bottom: none;
+}
+
+.seccion h2 {
   color: #764ba2;
   border-bottom: 2px dotted #ccc;
   padding-bottom: 10px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Lista de habilidades */
+.seccion h2:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  transition: width 0.3s ease;
+}
+
+.seccion:hover h2:before {
+  width: 100%;
+}
+
+/* ------------------- Habilidades ------------------- */
 .habilidades {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 15px;
+  justify-content: flex-start;
 }
 
 .habilidad {
-  background: #667eea;
+  background: linear-gradient(135deg, #667eea, #764ba2);
   color: white;
   padding: 8px 16px;
   border-radius: 25px;
   font-size: 0.9em;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .habilidad:hover {
-  transform: scale(1.05);
-  background: #764ba2;
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilos para enlaces */
+/* ------------------- Experiencia y educación ------------------- */
+.seccion ul {
+  list-style: none;
+  padding: 0;
+}
+
+.seccion ul li {
+  background: rgba(102, 126, 234, 0.05);
+  margin: 15px 0;
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 4px solid #667eea;
+  transition: all 0.3s ease;
+}
+
+.seccion ul li:hover {
+  background: rgba(102, 126, 234, 0.1);
+  transform: translateX(5px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ------------------- Tarjetas y formulario de contacto ------------------- */
+.contact-card {
+  background: rgba(102, 126, 234, 0.05);
+  border-radius: 15px;
+  padding: 30px;
+  margin: 20px 0;
+  border-left: 5px solid #667eea;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  background: rgba(102, 126, 234, 0.08);
+}
+
+.contact-card h3:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  transition: width 0.3s ease;
+}
+
+.contact-card:hover h3:before {
+  width: 100%;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  padding: 15px;
+  background: white;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.contact-item:hover {
+  transform: translateX(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-icon {
+  font-size: 2rem;
+  margin-right: 20px;
+  min-width: 60px;
+  text-align: center;
+}
+
+.contact-info h4 {
+  color: #764ba2;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.contact-info p {
+  margin: 0;
+  color: #666;
+}
+
+.contact-info a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
+
+.contact-form {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+}
+
+.form-control {
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+.btn-custom {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-custom:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+/* ------------------- Mapa de ubicación ------------------- */
+.location-section {
+  background: rgba(118, 75, 162, 0.05);
+  border-radius: 15px;
+  padding: 30px;
+  margin: 30px 0;
+  text-align: center;
+}
+
+.location-section h3 {
+  color: #764ba2;
+  margin-bottom: 20px;
+}
+
+.location-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.location-detail {
+  background: white;
+  padding: 15px 25px;
+  border-radius: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ------------------- Footer ------------------- */
+footer {
+  text-align: center;
+  margin: 0;
+  padding: 30px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+
+/* ------------------- Enlaces ------------------- */
 a {
   color: #667eea;
   text-decoration: none;
@@ -91,43 +381,75 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  margin-top: 40px;
-  padding: 20px;
-  background: #667eea;
-  color: white;
-  border-radius: 10px;
+/* ------------------- Media Queries ------------------- */
+@media (min-width: 992px) {
+  .navbar-custom .navbar-nav {
+    gap: 12px;
+  }
+  .navbar-custom .navbar-nav .nav-link {
+    font-size: 1rem;
+    padding: 12px 20px !important;
+    margin: 0 5px;
+  }
+  .navbar-custom .container-fluid {
+    max-width: 1200px;
+  }
 }
 
-/* Responsividad básica */
-@media (max-width: 600px) {
-  .container {
-    margin: 20px;
-    padding: 15px;
+@media (min-width: 1200px) {
+  .navbar-custom .navbar-nav {
+    gap: 15px;
   }
+  .navbar-custom .navbar-nav .nav-link {
+    font-size: 1.05rem;
+    padding: 12px 24px !important;
+    margin: 0 6px;
+  }
+}
 
+@media (max-width: 768px) {
+  .container-main {
+    margin: 10px;
+    border-radius: 10px;
+  }
+  .header-content,
+  .header-contact {
+    padding: 30px 15px;
+  }
   h1 {
     font-size: 2em;
   }
-
+  .seccion {
+    padding: 20px 15px;
+  }
   .habilidades {
     justify-content: center;
   }
+  .navbar-custom .navbar-nav .nav-link {
+    margin: 5px 0;
+  }
+  .main-content {
+    padding: 20px;
+  }
+  .contact-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  .contact-icon {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .location-info {
+    flex-direction: column;
+  }
 }
 
-/* Animación sutil */
-.container {
-  animation: fadeIn 1s ease-in;
-}
-
+/* ------------------- Animaciones ------------------- */
 @keyframes fadeIn {
   from {
     opacity: 0;
     transform: translateY(20px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
