@@ -96,6 +96,9 @@ table.tools{width:100%;border-collapse:collapse;border-top:2px solid var(--tinta
 .proj h3{font:600 clamp(30px,3.4vw,40px)/1.05 var(--display);margin:0 0 10px}
 .proj > p{margin:0;color:var(--muted);max-width:40em}
 .proj .stack{margin:14px 0 0;font-weight:600;font-size:16px;color:var(--mar)}
+.proj .link{display:inline-block;margin-top:14px;font-weight:600;color:var(--tinta);text-decoration:none;border-bottom:2px solid var(--carton);padding-bottom:2px}
+.proj .link:hover{background:var(--carton)}
+.proj .link + .link{margin-left:22px}
 details{margin-top:14px;font-size:17px}
 summary{cursor:pointer;font-weight:600;padding:6px 0}
 details p{color:var(--muted);margin:8px 0 0;max-width:40em}
@@ -244,7 +247,7 @@ footer{padding:22px 0;font-size:14px;color:var(--muted);display:flex;justify-con
   <div class="wrap sec">
     <div>
       <h2>Proyectos</h2>
-      <p class="lead">Herramientas que armé para organizar tareas y analizar información del trabajo diario.</p>
+      <p class="lead">Herramientas para el trabajo diario y sitios web. Los repositorios están en <a href="https://github.com/eMMa87CR" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
     </div>
     <div>
       <article class="proj">
@@ -258,6 +261,18 @@ footer{padding:22px 0;font-size:14px;color:var(--muted);display:flex;justify-con
         <p>Tableros web, desarrollados con asistencia de IA, para explorar ventas y stock. Incluye la documentación de la recepción de mercadería.</p>
         <p class="stack">Visualización, IA aplicada, documentación</p>
         <details><summary>Cómo lo trabajé</summary><p>Revisión de la calidad de los datos antes de visualizar resultados. Organización de instrucciones simples para recepción de transporte, conteo de bultos y control de remitos.</p></details>
+      </article>
+      <article class="proj">
+        <h3>Sitio web de Farmacia Roca</h3>
+        <p>Sitio institucional de una farmacia de Comodoro Rivadavia, con inicio, nosotros, servicios, consejos y contacto. Lo reorganicé sobre el sitio original, manteniendo sus contenidos e imágenes.</p>
+        <p class="stack">HTML, SCSS, JavaScript</p>
+        <a class="link" href="https://github.com/eMMa87CR/farmacia-roca-web" target="_blank" rel="noopener noreferrer">Ver código en GitHub</a>
+      </article>
+      <article class="proj">
+        <h3>Tienda con carrito en JavaScript</h3>
+        <p>Proyecto final del curso de JavaScript de CoderHouse: catálogo de productos, carrito de compras con cálculo del total y consulta del clima de Comodoro Rivadavia.</p>
+        <p class="stack">JavaScript, Bootstrap, Fetch API, SweetAlert2</p>
+        <a class="link" href="https://github.com/eMMa87CR/Victor-Emmanuel-Mercado-Comision-Proyecto-final-de-JS2" target="_blank" rel="noopener noreferrer">Ver código en GitHub</a>
       </article>
     </div>
   </div>
