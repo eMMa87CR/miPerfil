@@ -5,7 +5,25 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Victor Emmanuel Mercado | Operaciones, logística y datos</title>
 <meta name="description" content="CV de Victor Emmanuel Mercado. Casi 20 años en compras, logística y stock, con Excel, Power Query y herramientas web. Comodoro Rivadavia, Chubut.">
-<meta name="theme-color" content="#14232E">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#E9EEF0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1A22" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://emma87cr.github.io/miPerfil/">
+<meta property="og:type" content="profile">
+<meta property="og:locale" content="es_AR">
+<meta property="og:url" content="https://emma87cr.github.io/miPerfil/">
+<meta property="og:title" content="Victor Emmanuel Mercado | Operaciones, logística y datos">
+<meta property="og:description" content="Casi 20 años en compras, logística y stock. Excel, Power Query y herramientas web. Comodoro Rivadavia, Chubut.">
+<meta property="og:image" content="https://emma87cr.github.io/miPerfil/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Victor Emmanuel Mercado. Operaciones, logística y datos.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='6' fill='%2314232E'/%3E%3Crect x='10' y='46' width='44' height='6' fill='%23B7864A'/%3E%3Ctext x='32' y='40' font-family='Arial Narrow,Arial,sans-serif' font-weight='700' font-size='30' fill='%23E9EEF0' text-anchor='middle'%3EVM%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Victor Emmanuel Mercado","jobTitle":"Compras, administración y logística","worksFor":{"@type":"Organization","name":"Fajardo e Hijos S.A. (Triax)"},"address":{"@type":"PostalAddress","addressLocality":"Comodoro Rivadavia","addressRegion":"Chubut","addressCountry":"AR"},"email":"mailto:vem696@gmail.com","url":"https://emma87cr.github.io/miPerfil/","sameAs":["https://github.com/eMMa87CR","https://www.linkedin.com/in/victor-emmanuel-mercado-27250817a/"]}
+</script>
+<script>try{var t=localStorage.getItem('tema');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
@@ -18,8 +36,26 @@
   --remito:#FBFBF8;
   --linea:#C3CED4;
   --muted:#46565F;
+  --celda:#E3E9EC;
+  --hueco:#F3E6D2;
+  --hueco-tx:#7a5528;
+  --sello-tx:#14232E;
+  --cierre:#14232E;
+  --cierre-tx:#E9EEF0;
+  --cierre-muted:#9db0bb;
+  --cierre-linea:#3a4d5a;
   --display:'Barlow Condensed','Arial Narrow','Helvetica Neue',Arial,sans-serif;
   --text:'Barlow','Helvetica Neue',Arial,system-ui,sans-serif;
+}
+@media(prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --viento:#0F1A22;--tinta:#E4EAED;--mar:#7FB0D0;--carton:#C99A5E;--remito:#16242E;--linea:#2A3B47;--muted:#A3B3BC;
+    --celda:#1E2F3A;--hueco:#3A2E1F;--hueco-tx:#E8C08A;--cierre:#0A1319;--cierre-tx:#E4EAED;--cierre-muted:#8FA3AF;--cierre-linea:#25343F;
+  }
+}
+:root[data-theme="dark"]{
+  --viento:#0F1A22;--tinta:#E4EAED;--mar:#7FB0D0;--carton:#C99A5E;--remito:#16242E;--linea:#2A3B47;--muted:#A3B3BC;
+  --celda:#1E2F3A;--hueco:#3A2E1F;--hueco-tx:#E8C08A;--cierre:#0A1319;--cierre-tx:#E4EAED;--cierre-muted:#8FA3AF;--cierre-linea:#25343F;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:84px}
@@ -38,7 +74,15 @@ a{color:inherit}
 .brand{font:600 24px/1 var(--display);text-decoration:none;letter-spacing:.2px}
 .links{display:flex;gap:26px;font-size:15px;font-weight:500}
 .links a{text-decoration:none;padding:6px 0;border-bottom:2px solid transparent}
-.links a:hover{border-bottom-color:var(--carton)}
+.links a:hover,.links a[aria-current="true"]{border-bottom-color:var(--carton)}
+.nav-end{display:flex;align-items:center;gap:22px}
+.theme{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--linea);border-radius:3px;background:transparent;color:var(--tinta);cursor:pointer;padding:0}
+.theme:hover{border-color:var(--tinta)}
+.theme svg{width:18px;height:18px}
+.theme .sun{display:none}
+:root[data-theme="dark"] .theme .sun{display:block}
+:root[data-theme="dark"] .theme .moon{display:none}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .theme .sun{display:block}:root:not([data-theme="light"]) .theme .moon{display:none}}
 
 /* portada */
 .hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:64px;align-items:center;padding:72px 0 80px}
@@ -52,6 +96,11 @@ h1{font:600 clamp(60px,9.4vw,132px)/.9 var(--display);letter-spacing:-1px;margin
 .btn.main{background:var(--tinta);color:var(--viento)}
 .btn.main:hover{background:var(--mar);border-color:var(--mar)}
 .print-contact{display:none}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:40px 0 0;padding:0;list-style:none;border-top:2px solid var(--tinta)}
+.facts li{padding:14px 16px 0 0}
+.facts li + li{padding-left:16px;border-left:1px solid var(--linea)}
+.facts strong{display:block;font:600 clamp(30px,3.4vw,40px)/1 var(--display);font-variant-numeric:tabular-nums}
+.facts span{display:block;margin-top:4px;font-size:14px;line-height:1.35;color:var(--muted)}
 
 /* curva de talles */
 .matrix-panel{background:var(--remito);border:2px solid var(--tinta);border-radius:3px;padding:22px 22px 18px}
@@ -60,9 +109,9 @@ h1{font:600 clamp(60px,9.4vw,132px)/.9 var(--display);letter-spacing:-1px;margin
 .matrix{display:grid;grid-template-columns:auto repeat(5,1fr);gap:5px;font:500 17px/1 var(--display);font-variant-numeric:tabular-nums}
 .matrix .h{font-size:15px;color:var(--muted);display:flex;align-items:center;justify-content:center;padding:4px 0}
 .matrix .r{font-size:15px;color:var(--muted);display:flex;align-items:center;padding-right:8px}
-.cell{aspect-ratio:1.25;display:flex;align-items:center;justify-content:center;background:#E3E9EC;border:1px dashed transparent;border-radius:2px;transition:background .35s,color .35s,border-color .35s}
-.cell.filled{background:var(--mar);color:#fff}
-.cell.gap{background:#F3E6D2;border-color:var(--carton);color:#7a5528}
+.cell{aspect-ratio:1.25;display:flex;align-items:center;justify-content:center;background:var(--celda);border:1px dashed transparent;border-radius:2px;transition:background .35s,color .35s,border-color .35s}
+.cell.filled{background:var(--mar);color:var(--viento)}
+.cell.gap{background:var(--hueco);border-color:var(--carton);color:var(--hueco-tx)}
 .legend{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:14px;font-size:14px;color:var(--muted)}
 .legend strong{color:var(--tinta);font-variant-numeric:tabular-nums}
 
@@ -74,7 +123,7 @@ h1{font:600 clamp(60px,9.4vw,132px)/.9 var(--display);letter-spacing:-1px;margin
 
 .job{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:6px}
 .job h3{font:600 30px/1.1 var(--display);margin:0}
-.when{font-weight:600;font-size:15px;background:var(--carton);color:var(--tinta);padding:4px 10px;border-radius:2px}
+.when{font-weight:600;font-size:15px;background:var(--carton);color:var(--sello-tx);padding:4px 10px;border-radius:2px}
 .company{margin:0 0 26px;color:var(--muted)}
 dl.ledger{margin:0;border-top:2px solid var(--tinta)}
 .ledger .row{display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;padding:16px 0;border-bottom:1px solid var(--linea)}
@@ -110,13 +159,13 @@ details p{color:var(--muted);margin:8px 0 0;max-width:40em}
 .edu p{margin:0;color:var(--muted);font-size:17px}
 
 /* contacto */
-.contact{background:var(--tinta);color:var(--viento);padding:84px 0}
-.contact .sec h2{color:#fff}
-.contact .lead{color:#b9c6ce}
-.contact-list{list-style:none;margin:0;padding:0;border-top:1px solid #3a4d5a}
-.contact-list li{border-bottom:1px solid #3a4d5a}
+.contact{background:var(--cierre);color:var(--cierre-tx);padding:84px 0}
+.contact .sec h2{color:var(--cierre-tx)}
+.contact .lead{color:var(--cierre-muted)}
+.contact-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--cierre-linea)}
+.contact-list li{border-bottom:1px solid var(--cierre-linea)}
 .contact-list a{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px 20px;padding:20px 0;text-decoration:none;overflow-wrap:anywhere}
-.contact-list small{font-size:15px;color:#9db0bb;align-self:center}
+.contact-list small{font-size:15px;color:var(--cierre-muted);align-self:center}
 .contact-list span{font:600 clamp(28px,3.6vw,42px)/1.1 var(--display)}
 .contact-list a:hover span{color:var(--carton)}
 footer{padding:22px 0;font-size:14px;color:var(--muted);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
@@ -134,15 +183,20 @@ footer{padding:22px 0;font-size:14px;color:var(--muted);display:flex;justify-con
   .links .opt{display:none}
   .ledger .row,.support,.edu li{grid-template-columns:1fr;gap:6px}
   .tools th{width:36%}
-  .actions .btn{flex:1;justify-content:center}
+  .actions .btn{flex:1 1 auto;justify-content:center}
+  .facts li{padding-right:10px}
+  .facts li + li{padding-left:10px}
+  .facts span{font-size:13px}
+  .nav-end{gap:14px}
   .matrix-panel{padding:16px 14px 14px}
   .matrix{gap:4px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cell{transition:none}}
 @media print{
+  :root,:root[data-theme="dark"]{--viento:#fff;--tinta:#111;--mar:#2F5D7C;--carton:#B7864A;--remito:#fff;--linea:#bbb;--muted:#444;--sello-tx:#111}
   @page{margin:14mm}
   body{background:#fff;font-size:10.5pt;line-height:1.45}
-  .top,.skip,.actions,.matrix-panel,footer{display:none!important}
+  .top,.skip,.actions,.matrix-panel,.facts,footer{display:none!important}
   .wrap{width:100%}
   .hero{display:block;padding:0 0 12px}
   h1{font-size:40pt;margin:0 0 8px}
@@ -166,11 +220,18 @@ footer{padding:22px 0;font-size:14px;color:var(--muted);display:flex;justify-con
 <header class="top">
   <nav class="wrap nav" aria-label="Principal">
     <a class="brand" href="#inicio" aria-label="Victor Mercado, inicio">Victor Mercado</a>
-    <div class="links">
-      <a href="#experiencia">Experiencia</a>
-      <a href="#herramientas" class="opt">Herramientas</a>
-      <a href="#proyectos" class="opt">Proyectos</a>
-      <a href="#contacto">Contacto</a>
+    <div class="nav-end">
+      <div class="links">
+        <a href="#experiencia">Experiencia</a>
+        <a href="#herramientas" class="opt">Herramientas</a>
+        <a href="#proyectos" class="opt">Proyectos</a>
+        <a href="#formacion" class="opt">Formación</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <button class="theme" id="theme" type="button" aria-label="Cambiar a modo oscuro">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
     </div>
   </nav>
 </header>
@@ -185,10 +246,16 @@ footer{padding:22px 0;font-size:14px;color:var(--muted);display:flex;justify-con
       <p class="intro">Casi 20 años en compras, stock y depósito. Uso Excel, Power Query y herramientas web para organizar información, acompañar decisiones y mejorar procesos.</p>
       <div class="actions">
         <a class="btn main" href="#contacto">Contactarme</a>
-        <a class="btn" href="https://github.com/eMMa87CR" target="_blank" rel="noopener noreferrer">Ver GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/victor-emmanuel-mercado-27250817a/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="btn" href="https://github.com/eMMa87CR" target="_blank" rel="noopener noreferrer">GitHub</a>
         <button class="btn" id="print-cv" type="button">Guardar como PDF</button>
       </div>
-      <p class="print-contact">vem696@gmail.com · +54 2974 322048 · github.com/eMMa87CR</p>
+      <p class="print-contact">vem696@gmail.com · +54 2974 322048 · linkedin.com/in/victor-emmanuel-mercado-27250817a · github.com/eMMa87CR</p>
+      <ul class="facts">
+        <li><strong>Desde 2006</strong><span>en Fajardo e Hijos S.A. (Triax)</span></li>
+        <li><strong>11</strong><span>sucursales con datos de ventas, stock e ingresos</span></li>
+        <li><strong>Excel 365</strong><span>Power Query y modelo de datos</span></li>
+      </ul>
     </div>
 
     <aside class="matrix-panel" aria-labelledby="mx-t">
@@ -301,6 +368,7 @@ footer{padding:22px 0;font-size:14px;color:var(--muted);display:flex;justify-con
     <ul class="contact-list">
       <li><a href="mailto:vem696@gmail.com"><small>Email</small><span>vem696@gmail.com</span></a></li>
       <li><a href="tel:+542974322048"><small>Teléfono</small><span>+54 2974 322048</span></a></li>
+      <li><a href="https://www.linkedin.com/in/victor-emmanuel-mercado-27250817a/" target="_blank" rel="noopener noreferrer"><small>Perfil profesional</small><span>LinkedIn</span></a></li>
       <li><a href="https://github.com/eMMa87CR" target="_blank" rel="noopener noreferrer"><small>Código y proyectos</small><span>github.com/eMMa87CR</span></a></li>
     </ul>
   </div>
@@ -345,6 +413,30 @@ footer{padding:22px 0;font-size:14px;color:var(--muted);display:flex;justify-con
     },900);
   }
   document.getElementById('print-cv').addEventListener('click',function(){window.print()});
+
+  var root=document.documentElement,btn=document.getElementById('theme');
+  var dark=window.matchMedia('(prefers-color-scheme: dark)');
+  function isDark(){var t=root.dataset.theme;return t?t==='dark':dark.matches}
+  function label(){btn.setAttribute('aria-label',isDark()?'Cambiar a modo claro':'Cambiar a modo oscuro')}
+  label();
+  btn.addEventListener('click',function(){
+    var t=isDark()?'light':'dark';root.dataset.theme=t;label();
+    try{localStorage.setItem('tema',t)}catch(e){}
+  });
+  if(dark.addEventListener)dark.addEventListener('change',label);
+
+  var links=[].slice.call(document.querySelectorAll('.links a'));
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting)return;
+        links.forEach(function(a){
+          if(a.getAttribute('href')==='#'+e.target.id)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current');
+        });
+      });
+    },{rootMargin:'-40% 0px -55% 0px'});
+    links.forEach(function(a){var t=document.querySelector(a.getAttribute('href'));if(t)io.observe(t)});
+  }
   window.addEventListener('beforeprint',function(){
     [].forEach.call(document.querySelectorAll('details'),function(d){d.open=true});
   });
